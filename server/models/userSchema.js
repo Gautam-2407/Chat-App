@@ -18,12 +18,12 @@ const userSchema = new mongoose.Schema({
     },
     gender:{
         type: String,
-        unique: true,
         required: true,
     },
     role:{
         type: String,
         required: true,
+        default: "user"
     }
 
 });

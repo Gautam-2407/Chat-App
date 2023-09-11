@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Register.css';
+import {registerfunction} from '../Services/api';
 
 
-const  Register = (props) => {  
+
+const  Register = () => {  
+  const [name, setName]= useState("");
+  const [email, setEmail]= useState("");
+  const [gender, setGender]= useState("");
   const [phoneNumber, setPhoneNumber] = useState('');
   const location = useLocation();
-
+  const navigate = useNavigate();
+ 
+ // To get a phone number from login page
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const phoneNumberParam = queryParams.get('phoneNumber');
@@ -14,6 +21,24 @@ const  Register = (props) => {
       setPhoneNumber(phoneNumberParam);
     }
   }, [location]);
+
+
+// To register a new user
+
+const handleClick = async (e) => {
+  e.preventDefault();
+  console.log("Register");
+  try{
+    const response = await registerfunction(name,phoneNumber, email, gender);
+    console.log(response);
+    navigate('/dashboard');
+  }
+  
+  catch(err){
+    console.log("error start");
+    console.log(err);
+  }
+}
     return (
 
     
@@ -22,27 +47,35 @@ const  Register = (props) => {
   <h2>Register</h2>
   <form>
   <div className="user-box">
-      <input type="text"  required/>
+      <input type="text"  value={name} onChange={(e) => setName(e.target.value)} required/>
       <label>Name</label>
     </div>
     <div className="user-box">
-      <input type="text"  required/>
+      <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} required/>
       <label>Email</label>
     </div>
     <div className="user-box">
-      <input type="text"
-          name="number"
-          defaultValue={props.phone}
-           disabled={true}
-          required/>
-      {/* <label>Phone No.</label> */}
+    <div className="phonelabel">
+      Phone No.
+      
+      </div> 
+      <input
+  type="text"
+  name="number"
+  value={phoneNumber}
+  onChange={(e) => setPhoneNumber(e.target.value)}
+  disabled={true} // Now it's a boolean value
+  required
+/>
+
+
     </div>
     <div className="user-box">
-      <input type="text"   required/> 
+      <input type="text" value={gender} onChange={(e) => setGender(e.target.value)}  required/> 
       <label>Gender</label>
     </div>
     
-      <button>
+      <button onClick={handleClick}>
       <span></span>
         <span></span>
         <span></span>

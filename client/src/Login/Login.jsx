@@ -32,7 +32,7 @@ const  Login = () => {
     else {
       console.log("not in for loop");
       setUser(true);
-      navigate(`/register?phoneNumber=${phoneNumber}`);
+      navigate(`/register?phoneNumber=${phone}`);
         // window.location.replace("/");
     }
   }

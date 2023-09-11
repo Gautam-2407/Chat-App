@@ -59,7 +59,12 @@
     color: #03e9f4;
     font-size: 12px;
   }
-  
+  .phonelabel{
+    top: -80px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
   .register-box form button {
     position: relative;
     display: inline-block;
