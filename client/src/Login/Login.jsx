@@ -26,7 +26,8 @@ const  Login = () => {
     const response = await loginfunction(phone);
     console.log(response);
     if (response && response.exists) {
-    
+      console.log(response.user.role);
+      
       navigate("/dashboard");       
     }
     else {
@@ -92,3 +93,4 @@ const  Login = () => {
 }
 
 export default Login
+
