@@ -51,7 +51,7 @@ exports.userregister = async (req, res) => {
         else {
           const token = jwt.sign({phone:user.phone}, SECRET_KEY);
           res.status(201).json({ exists: true , user:user, token:token});
-          console.log("Phone No. Match");
+          // console.log("Phone No. Match");
           
           
         }
