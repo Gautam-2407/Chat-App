@@ -7,17 +7,19 @@ import Register from './Register/Register';
 import Sidebar from './Components/Sidebar/Super-admin-sidebar/Super-admin-sidebar';
 import Admin from './Components/Sidebar/Admin-sidebar/Admin-sidebar';
 import User from './Components/Sidebar/User-sidebar/User-sidebar';
+import Dashboard from './Components/Dashboard/Dashborad';
 
 function App() {
   return (
 
     <div className="App">
     <Routes>
-      <Route path='/login' element={<Login />}/>
+      <Route path='/' element={<Login />}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/sidebar' element={<Sidebar />}/>
       <Route path='/admin' element={<Admin/>}/>
       <Route path='/user' element={<User/>}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
       </Routes>
     </div>
   );

@@ -4,6 +4,8 @@ import {loginfunction} from '../Services/api'
 import './Login.css';
 import { ToastContainer, toast } from 'react-toastify';
 import Register from '../Register/Register';
+import { useDispatch } from 'react-redux';
+import { setUserRole } from './action';
 
 const  Login = () => {
   // console.log("hn",props)
@@ -11,6 +13,7 @@ const  Login = () => {
   const [buttonLabel, setButtonLabel] = useState(true);
   const navigate = useNavigate();
   const [user, setUser] = useState(false);
+  const dispatch = useDispatch();
  
  const send_otp = (e) => {
   e.preventDefault();
@@ -27,7 +30,9 @@ const  Login = () => {
     console.log(response);
     if (response && response.exists) {
       console.log(response.user.role);
-      
+      const userRole = response.user.role;
+      dispatch(setUserRole(userRole));
+
       navigate("/dashboard");       
     }
     else {

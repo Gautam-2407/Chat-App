@@ -1,4 +1,6 @@
 const users = require("../models/userSchema");
+const jwt = require('jsonwebtoken');
+const SECRET_KEY ='GAUTAM';
 
 exports.userregister = async (req, res) => {
     const {name, phone, email, gender }=req.body;
@@ -25,7 +27,7 @@ exports.userregister = async (req, res) => {
         });
         
         const storeData= await newuser.save();
-        
+
         res.status(200).json(storeData);
       }
     } catch (error) {
@@ -47,8 +49,11 @@ exports.userregister = async (req, res) => {
          return res.send("Phone No. not found")
         }
         else {
-          res.status(201).json({ exists: true ,user});
+          const token = jwt.sign({phone:user.phone}, SECRET_KEY);
+          res.status(201).json({ exists: true , user:user, token:token});
           console.log("Phone No. Match");
+          
+          
         }
       }
     
