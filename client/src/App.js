@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Register from './Register/Register';
 import Dashboard from './Components/Dashboard/Dashborad';
 import Privateroute from './Private/Privateroute';
+import AdminList from './InnerPages/AdminList/AdminList';
 // import jwt from 'jsonwebtoken';
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
       
           </Route>
           <Route path="/register" element={<Register />} />
-      
+          <Route path="/admin" element={<AdminList/>}/>
       </Routes>
     </div>
   );

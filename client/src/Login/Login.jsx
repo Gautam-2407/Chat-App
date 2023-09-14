@@ -4,7 +4,7 @@ import { loginfunction } from '../Services/api'
 import './Login.css';
 import { ToastContainer, toast } from 'react-toastify';
 import Register from '../Register/Register';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
 
 const Login = () => {
@@ -13,8 +13,7 @@ const Login = () => {
   const [buttonLabel, setButtonLabel] = useState(true);
   const navigate = useNavigate();
   const [user, setUser] = useState(false);
-  const dispatch = useDispatch();
-  const authtoken = sessionStorage.getItem('auth_token');
+  
 
 
 
@@ -33,7 +32,11 @@ const Login = () => {
       console.log(response);
       if (response && response.exists) {
         sessionStorage.setItem("auth_token",  response.token);
-        navigate("/dashboard");
+        const authtoken = sessionStorage.getItem('auth_token');
+
+        console.log(authtoken);
+        
+        navigate("/dashboard" );
       }
       else {
         console.log("not in for loop");
@@ -46,7 +49,7 @@ const Login = () => {
       console.log(error);
     }
   }
-
+// console.log(authtoken);
   // useEffect(() => {
   //   if (authtoken){
   //     navigate('/dashboard', {replace: true});

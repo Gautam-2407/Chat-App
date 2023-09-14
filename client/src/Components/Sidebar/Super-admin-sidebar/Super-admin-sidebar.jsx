@@ -1,6 +1,7 @@
 import React from 'react'
 import '../Sidebar.css'
 import { Link } from 'react-router-dom'
+// import NewTask from '../../../AssignTask/AssignTask'
 function Sidebar() {
     const handlelogout = (() => {
         window.location.replace("/");
@@ -21,10 +22,10 @@ function Sidebar() {
             <div className="links">
                 <ul className="categories list-unstyled">
                     <li className="">
-                        <Link to='/new-task' id="a">Dashboard</Link>
+                        <Link to='/dashboard' id="a">Dashboard</Link>
                     </li>
                     <li className="">
-                        <Link to='/new-task' id="a">New Task</Link>
+                        <Link to={'NewTask'} id="a">New Task</Link>
                     </li>
 
                     <li className="">

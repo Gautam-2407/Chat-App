@@ -23,7 +23,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(#141e30, #243b55);
+    /* background: linear-gradient(#141e30, #243b55); */
     /* background-color: var(--dk-darker-bg); */
     font-size: .925rem;
 }

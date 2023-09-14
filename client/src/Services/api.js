@@ -21,3 +21,13 @@ export const loginfunction = async(phone) => {
         throw error;
     }
 }
+
+export const adminfetch = async() => {
+    try {
+        const response = await commonrequest("GET", `${backend_url}/admin/getinfo`);
+        return response.data;
+    }
+    catch(error) {
+        throw error;
+    }
+}
