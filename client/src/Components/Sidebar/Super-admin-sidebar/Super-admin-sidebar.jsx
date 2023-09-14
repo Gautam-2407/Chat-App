@@ -2,6 +2,10 @@ import React from 'react'
 import '../Sidebar.css'
 import { Link } from 'react-router-dom'
 function Sidebar() {
+    const handlelogout = (() => {
+        window.location.replace("/");
+        sessionStorage.removeItem('auth_token');
+    })
     return (
 
         <aside className="sidebar" id="show-side-navigation1">
@@ -34,7 +38,7 @@ function Sidebar() {
                         <Link to='/new-task' id="a">User's List </Link>
                     </li>
                     <li className="">
-                        <Link to='/new-task' id="a">Logout </Link>
+                        <Link to={"/logout"} id="a" onClick={handlelogout}>Logout </Link>
                     </li>
                 </ul>
             </div>

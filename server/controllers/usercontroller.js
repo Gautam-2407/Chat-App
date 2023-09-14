@@ -40,6 +40,7 @@ exports.userregister = async (req, res) => {
   //CHECK PHONE INFORMATION IN DATABASE
   exports.userlogin = async (req, res) => {
      const { phone } = req.body;
+    //  const { role} = req.body;
   
      const user = await users.findOne({ phone: phone });
      
@@ -49,11 +50,23 @@ exports.userregister = async (req, res) => {
          return res.send("Phone No. not found")
         }
         else {
-          const token = jwt.sign({phone:user.phone}, SECRET_KEY);
-          res.status(201).json({ exists: true , user:user, token:token});
+          if (user.role === "Super-Admin") {
+          const token = jwt.sign({phone:user.phone }, SECRET_KEY);
+          const new_token = token + "1";
+
+          res.status(201).json({ exists: true , user:user, token:new_token});
           // console.log("Phone No. Match");
-          
-          
+          }
+
+          else if (user.role === "admin") {
+            const token = jwt.sign({phone:user.phone }, SECRET_KEY);
+            const new_token = token + "2";
+            res.status(201).json({ exists: true , user:user, token:new_token});}
+
+            else if (user.role === "user") {
+              const token = jwt.sign({phone:user.phone }, SECRET_KEY);
+              const new_token = token + "3";
+              res.status(201).json({ exists: true, user:user, token:new_token});}
         }
       }
     

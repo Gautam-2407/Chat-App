@@ -1,23 +1,41 @@
-// PrivateRoute.js
-import React from 'react';
-// import { Route, Redirect } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
-  const token = sessionStorage.getItem('auth_token');
-  const isAuthenticated = !!token; // Check if token exists
+const PrivateRoute = ({ onLogout }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const authToken = sessionStorage.getItem('auth_token');
+  const initialRenderRef = useRef(true);
 
-  if (!isAuthenticated) {
-    // Redirect to login page if not authenticated
-    navigate( "/login") ;
+  useEffect(() => {
+    if (initialRenderRef.current) {
+      initialRenderRef.current = false;
+      return;
+    }
+
+    const storedToken = sessionStorage.getItem('auth_token');
+    if (!authToken && !storedToken) {
+      navigate("/", { replace: true });
+    }
+  }, [authToken, navigate]);
+
+  const isProfileRoute = location.pathname === "/register";
+
+  if (!authToken) {
+    navigate("/");
+    return null;
   }
 
-  // Get user role from the token (you need to decode it)
-//   const userRole = decodeTokenAndGetUserRole(token); // Implement this function
-
-  // Render the protected component with the user role
-//   return <Route {...rest} render={(props) => <Component {...props} userRole={userRole} />} />;
+  return (
+    <div className="main-container">
+      <div className="main-screen">
+        {!isProfileRoute}
+        <div className="page-content">
+          <Outlet />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default PrivateRoute;

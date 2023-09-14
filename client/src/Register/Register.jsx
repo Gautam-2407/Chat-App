@@ -31,7 +31,7 @@ const handleClick = async (e) => {
   try{
     const response = await registerfunction(name,phoneNumber, email, gender);
     console.log(response);
-    navigate('/dashboard');
+    navigate('/');
   }
   
   catch(err){

@@ -1,17 +1,19 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import Sidebar from '../Sidebar/Super-admin-sidebar/Super-admin-sidebar';
 import Admin from '../Sidebar/Admin-sidebar/Admin-sidebar';
 import User from '../Sidebar/User-sidebar/User-sidebar';
-const Dashboard = () => {
-  const userRole = useSelector((state) => state.userRole);
-  let sidebarComponent;
 
-  if (userRole === 'admin') {
+const Dashboard = () => {
+  let sidebarComponent;
+    const authtoken = sessionStorage.getItem('auth_token');
+    const role=authtoken.split("")
+    const getrole=role[role.length-1]
+    console.log(getrole);
+  if (getrole === "2") {
     sidebarComponent = <Admin />;
-  } else if (userRole ==='Super-Admin') {
+  } else if (getrole === "1") {
     sidebarComponent = <Sidebar />;
-  } else if (userRole === 'user') {
+  } else if (getrole === "3") {
     sidebarComponent = <User />;
   }
   return (

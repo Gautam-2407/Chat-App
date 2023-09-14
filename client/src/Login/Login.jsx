@@ -5,7 +5,7 @@ import './Login.css';
 import { ToastContainer, toast } from 'react-toastify';
 import Register from '../Register/Register';
 import { useDispatch } from 'react-redux';
-import { setUserRole } from './action';
+
 
 const Login = () => {
   // console.log("hn",props)
@@ -14,6 +14,9 @@ const Login = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(false);
   const dispatch = useDispatch();
+  const authtoken = sessionStorage.getItem('auth_token');
+
+
 
   const send_otp = (e) => {
     e.preventDefault();
@@ -29,11 +32,7 @@ const Login = () => {
       const response = await loginfunction(phone);
       console.log(response);
       if (response && response.exists) {
-        console.log(response.user.role);
         sessionStorage.setItem("auth_token",  response.token);
-        const userRole = response.user.role;
-        dispatch(setUserRole(userRole));
-
         navigate("/dashboard");
       }
       else {
@@ -48,7 +47,12 @@ const Login = () => {
     }
   }
 
-
+  // useEffect(() => {
+  //   if (authtoken){
+  //     navigate('/dashboard', {replace: true});
+  //   }
+    
+  // });
 
   return (
 
