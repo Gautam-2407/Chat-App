@@ -31,3 +31,23 @@ export const adminfetch = async() => {
         throw error;
     }
 }
+
+export const userfetch = async() => {
+    try {
+        const response = await commonrequest("GET", `${backend_url}/user/getinfo`);
+        return response.data;
+    }
+    catch(error) {
+        throw error;
+    }
+}
+
+export const adminDelete = async(id) => {
+    try {
+        const response = await commonrequest("Delete", `${backend_url}/admin/delete/${id}`);
+        return response.data;
+    }
+    catch(error) {
+        throw error;
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, {  useRef } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 
 const PrivateRoute = ({ onLogout }) => {
@@ -7,14 +7,13 @@ const PrivateRoute = ({ onLogout }) => {
   const authToken = sessionStorage.getItem('auth_token');
   const initialRenderRef = useRef(true);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (initialRenderRef.current) {
       initialRenderRef.current = false;
       return;
     }
 
-    const storedToken = sessionStorage.getItem('auth_token');
-    if (!authToken && !storedToken) {
+    if (!authToken) {
       navigate("/", { replace: true });
     }
   }, [authToken, navigate]);
@@ -26,8 +25,9 @@ const PrivateRoute = ({ onLogout }) => {
     return null;
   }
 
-  return (
+  return authToken ? (
     <div className="main-container">
+      <div onClick = {onLogout}/>
       <div className="main-screen">
         {!isProfileRoute}
         <div className="page-content">
@@ -35,6 +35,8 @@ const PrivateRoute = ({ onLogout }) => {
         </div>
       </div>
     </div>
+  ) : (
+    navigate("/")
   );
 };
 

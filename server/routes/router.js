@@ -7,5 +7,7 @@ const fetchrole = require("../controllers/getinfo");
 router.post("/user/login", controllers.userlogin);
 router.post("/user/register", controllers.userregister);
 router.get("/admin/getinfo", fetchrole.admin);
+router.get("/user/getinfo", fetchrole.user);
+router.delete("/admin/delete/:id", fetchrole.adminDelete);
 
 module.exports = router;

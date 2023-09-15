@@ -1,13 +1,13 @@
 import './App.css';
 import React from'react';
-import { Route,  Routes,  } from 'react-router-dom';
+import { Route,  Routes  } from 'react-router-dom';
 import Login from './Login/Login';
 import "react-toastify/dist/ReactToastify.css";
 import Register from './Register/Register';
 import Dashboard from './Components/Dashboard/Dashborad';
 import Privateroute from './Private/Privateroute';
 import AdminList from './InnerPages/AdminList/AdminList';
-// import jwt from 'jsonwebtoken';
+import UserList from './InnerPages/UserList/UserList';
 
 function App() {
   const handleLogout = () => {
@@ -30,9 +30,11 @@ function App() {
           </Route>
           <Route path="/register" element={<Register />} />
           <Route path="/admin" element={<AdminList/>}/>
+          <Route path="/user" element={<UserList/>}/>
       </Routes>
     </div>
   );
 }
 
 export default App;
+

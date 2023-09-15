@@ -33,12 +33,6 @@ const Dashboard = () => {
 
         </main>
 
-
-
-
-
-
-
       </div>
 
     </div>

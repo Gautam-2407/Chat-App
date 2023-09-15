@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { adminfetch } from '../../Services/api';
+import { userfetch, adminDelete } from '../../Services/api';
 
-const AdminList = () => {
+const UserList = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await adminfetch();
+        const response = await userfetch();
         console.log(response)
         const adminMembers = response;
         setData(adminMembers);
@@ -19,7 +19,7 @@ const AdminList = () => {
 
     fetchData();
   }, []);
-
+    
   return (
     <div>
       <h1>Admin Members</h1>
@@ -40,8 +40,8 @@ const AdminList = () => {
               <td>{member.email}</td>
               <td>{member.phone}</td>
               <td>
-                <a href={`/admin/edit/${member._id}`}>Edit</a>
-                <a href={`/admin/delete/${member.id}`}>Delete</a>
+                <a href={`/user/edit/${member._id}`}>Edit</a>
+                <a href={`/admin/delete/${member._id}`}>Delete</a>
               </td>
             </tr>
           ))}
@@ -51,5 +51,5 @@ const AdminList = () => {
     </div>
   );
 };
+export default UserList;
 
-export default AdminList;
