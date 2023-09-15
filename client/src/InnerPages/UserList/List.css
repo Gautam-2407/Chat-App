@@ -1,25 +1,73 @@
-.app{
+.container {
     background: linear-gradient(#141e30, #243b55);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  
+    min-height: 100vh;
+    overflow: hidden;
 }
-.app > h1{
+.app {
     text-align: center;
-    color: aliceblue;
-}
-.app > table {
-    align-items: center;
-    background-color: white;
-    width: 90%;    
-    border: 2px solid black;
-}
-/* .app > table >tbody   {
-
-} */
-.app > table >tbody > tr > td {
-    /* align-items: center;  */
-    text-align: center;
-    border: 2px solid black;
-}
+    margin: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff; /* Set the title color for better visibility on a dark background */
+  }
+  
+  .member-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+  }
+  
+  .table-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .table-row:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05); /* Slightly transparent white background for even rows */
+  }
+  
+  .table-row:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background for hover effect */
+  }
+  
+  .table-data {
+    padding: 10px;
+    text-align: left;
+    color: #fff; /* Set the text color to white for better visibility on a dark background */
+  }
+  
+  .edit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+  
