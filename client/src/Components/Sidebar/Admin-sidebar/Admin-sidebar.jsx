@@ -34,7 +34,7 @@ function Admin() {
                         <Link to='/new-task' id="a">Completed Task</Link>
                     </li>
                     <li className="">
-                        <Link to={"/logout"} id="a" onClick={handlelogout}>Logout </Link>
+                        <p id="a" onClick={handlelogout}>Logout </p>
                     </li>
                 </ul>
             </div>

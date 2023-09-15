@@ -1,6 +1,6 @@
 import './App.css';
 import React from'react';
-import { Route, Routes,  } from 'react-router-dom';
+import { Route,  Routes,  } from 'react-router-dom';
 import Login from './Login/Login';
 import "react-toastify/dist/ReactToastify.css";
 import Register from './Register/Register';
@@ -15,29 +15,13 @@ function App() {
     window.location.replace("/");
   };
 
-  // const decoded =
-
-//   const parts = token.split('.');
-//   if (parts.length !== 3) {
-//     throw new Error('JWT token has wrong number of parts!');
-//   }
-
-//   const payload = JSON.parse(atob(parts[1]));
-
-//   return payload;
-// }
-
-// const token = sessionStorage.getItem('auth_token');
-
-// const payload = decodeJWT(token);
-// console.log(payload.role)
 
   return (
 
     <div className="App">
     <Routes>
       
-      <Route path='/' element={<Login onLogout={handleLogout} />}/>
+      <Route path="/" element={<Login onLogout={handleLogout} />}/>
       <Route
             path="/dashboard"
             element={<Privateroute onLogout={handleLogout} />} >

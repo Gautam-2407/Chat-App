@@ -12,6 +12,7 @@ root.render(
   
     <Route>
       <Provider store={store}>
+        
     <App />
       </Provider>
     </Route>

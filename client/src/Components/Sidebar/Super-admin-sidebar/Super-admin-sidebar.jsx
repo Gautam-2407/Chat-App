@@ -25,7 +25,7 @@ function Sidebar() {
                         <Link to='/dashboard' id="a">Dashboard</Link>
                     </li>
                     <li className="">
-                        <Link to={'NewTask'} id="a">New Task</Link>
+                        <Link to="/new-task" id="a">New Task</Link>
                     </li>
 
                     <li className="">
@@ -39,7 +39,7 @@ function Sidebar() {
                         <Link to='/new-task' id="a">User's List </Link>
                     </li>
                     <li className="">
-                        <Link to={"/logout"} id="a" onClick={handlelogout}>Logout </Link>
+                        <p id="a" onClick={handlelogout}>Logout </p>
                     </li>
                 </ul>
             </div>
