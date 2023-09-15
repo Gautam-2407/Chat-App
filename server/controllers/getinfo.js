@@ -26,7 +26,7 @@ exports.user = async (req, res) => {
 exports.adminDelete = async (req, res) => {
   const id = req.params.id;
   try {
-    console.log(id);
+    // console.log(id);
       // await deleteUserFromDatabase(id);
       const deletedUser = await users.findByIdAndDelete(id);
 

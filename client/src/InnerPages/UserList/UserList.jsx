@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { userfetch, adminDelete } from '../../Services/api';
-
+import "./List.css"
 const UserList = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
+      
       try {
         const response = await userfetch();
         console.log(response)
@@ -20,8 +21,19 @@ const UserList = () => {
     fetchData();
   }, []);
     
+  const deleteUser = async (userId) => {
+    try {
+      // Assuming adminDelete accepts the user ID as a parameter
+      await adminDelete(userId);
+      // After successful deletion, update the data in your component
+      setData((prevData) => prevData.filter((user) => user._id !== userId));
+    } catch (error) {
+      console.error('Delete Error:', error);
+
+    }
+  }
   return (
-    <div>
+    <div className='app'>
       <h1>Admin Members</h1>
       <table>
 
@@ -35,13 +47,13 @@ const UserList = () => {
         </thead>
         <tbody>
           {data.map((member) => (
-            <tr key={member.id}>
+            <tr key={member._id}>
               <td>{member.name}</td>
               <td>{member.email}</td>
               <td>{member.phone}</td>
               <td>
-                <a href={`/user/edit/${member._id}`}>Edit</a>
-                <a href={`/admin/delete/${member._id}`}>Delete</a>
+              <button >Edit</button>
+                <button onClick={() => deleteUser(member._id)}>Delete</button>
               </td>
             </tr>
           ))}

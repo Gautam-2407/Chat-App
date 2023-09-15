@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { adminfetch } from '../../Services/api';
+import { adminfetch, adminDelete } from '../../Services/api';
 
 const AdminList = () => {
   const [data, setData] = useState([]);
@@ -19,6 +19,18 @@ const AdminList = () => {
 
     fetchData();
   }, []);
+
+
+  const handleDelete = async (userId) => {
+    try {
+      // Assuming adminDelete accepts the user ID as a parameter
+      await adminDelete(userId);
+      // After successful deletion, update the data in your component
+      setData((prevData) => prevData.filter((user) => user._id !== userId));
+    } catch (error) {
+      console.error('Delete Error:', error);
+    }
+  };
 
   return (
     <div>
@@ -41,13 +53,13 @@ const AdminList = () => {
               <td>{member.phone}</td>
               <td>
                 <a href={`/admin/edit/${member._id}`}>Edit</a>
-                <a href={`/admin/delete/${member.id}`}>Delete</a>
+                <button onClick={() => handleDelete(member._id)}>Delete</button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-       
+
     </div>
   );
 };

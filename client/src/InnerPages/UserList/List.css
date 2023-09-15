@@ -1,0 +1,25 @@
+.app{
+    background: linear-gradient(#141e30, #243b55);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.app > h1{
+    text-align: center;
+    color: aliceblue;
+}
+.app > table {
+    align-items: center;
+    background-color: white;
+    width: 90%;    
+    border: 2px solid black;
+}
+/* .app > table >tbody   {
+
+} */
+.app > table >tbody > tr > td {
+    /* align-items: center;  */
+    text-align: center;
+    border: 2px solid black;
+}
