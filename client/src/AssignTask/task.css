@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
     background: linear-gradient(#141e30, #243b55);
     margin: 0;
     padding: 0;
@@ -9,11 +9,15 @@
     display: grid;
     grid-template-columns: 70% 30%;
 }
-.left{
+
+.left {
     text-align: center;
     margin: 20px;
     display: grid;
+    display: grid;
+    grid-template-rows: 10% 10% 50% 20%;
 }
+
 .userbox {
     position: relative;
 }
@@ -34,7 +38,7 @@
 
 .userbox label {
     position: absolute;
-    top:0;
+    top: 0;
     left: 10px;
     padding: 10px 0;
     font-size: 22px;
@@ -43,10 +47,10 @@
     transition: .5s;
 }
 
-.userbox input:focus ~ label,
-.userbox textarea:focus ~ label,
-.userbox input:valid ~ label,
-.userbox textarea:valid ~ label {
+.userbox input:focus~label,
+.userbox textarea:focus~label,
+.userbox input:valid~label,
+.userbox textarea:valid~label {
     top: -35px;
     left: 10;
     color: #03e9f4;
@@ -58,48 +62,167 @@
 .userbox input:focus,
 .userbox textarea:focus {
     border: 2px solid #fff;
-   
+
 }
-.userbox input{
+
+.userbox input {
     font-weight: 800px;
     font-size: 22px;
 }
 
-.right{
+.right {
     display: grid;
     grid-template-rows: 20% 80%;
 }
 
-.title2 > h1{
+.title2>h1 {
     text-align: center;
     margin: 20px;
 }
 
 .userbox textarea {
-
-    overflow:auto;
-            resize:none;
-            height:65vh;
+    height: 50vh;
+    resize: none;
 }
 
 /* Add this at the bottom of your CSS file */
 
 @media (max-width: 768px) {
     .wrapper {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
-    .left, .right {
-      margin: 10px;
+
+    .left,
+    .right {
+        margin: 10px;
     }
-    .userbox input, .userbox textarea, .userbox label {
-      font-size: 18px;
+
+    .userbox input,
+    .userbox textarea,
+    .userbox label {
+        font-size: 18px;
     }
-    .userbox input:focus ~ label,
-    .userbox textarea:focus ~ label,
-    .userbox input:valid ~ label,
-    .userbox textarea:valid ~ label {
-      top: -30px;
-      font-size: 16px;
+
+    .userbox input:focus~label,
+    .userbox textarea:focus~label,
+    .userbox input:valid~label,
+    .userbox textarea:valid~label {
+        top: -30px;
+        font-size: 16px;
     }
-  }
-  
+}
+
+.left button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 50px;
+    letter-spacing: 4px;
+    align-items: center;
+    width: 16rem;
+    background-color: transparent;
+}
+
+.left button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 2px #03e9f4,
+        0 0 4px #03e9f4,
+        0 0 8px #03e9f4,
+        0 0 16px #03e9f4;
+}
+
+.left button span {
+    position: absolute;
+    display: block;
+}
+
+.left button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.left button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.left button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+.left button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
