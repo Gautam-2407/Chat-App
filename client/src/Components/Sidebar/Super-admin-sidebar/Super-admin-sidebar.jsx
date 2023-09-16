@@ -21,24 +21,24 @@ function Sidebar() {
             </div>
             <div className="links">
                 <ul className="categories list-unstyled">
-                    <li className="">
+                    <li className="list">
                         <Link to='/dashboard' id="a">Dashboard</Link>
                     </li>
-                    <li className="">
+                    <li className="list">
                         <Link to="/new-task" id="a">New Task</Link>
                     </li>
 
-                    <li className="">
+                    <li className="list">
                         <Link to='/new-task' id="a">Pending Task</Link>
                     </li>
-                    <li className="">
+                    <li className="list">
                         <Link to='/admin' id="a">Admin List </Link>
                     </li>
                     
-                    <li className="">
+                    <li className="list">
                         <Link to='/user' id="a">User's List </Link>
                     </li>
-                    <li className="">
+                    <li className="list">
                         <p id="a" onClick={handlelogout}>Logout </p>
                     </li>
                 </ul>

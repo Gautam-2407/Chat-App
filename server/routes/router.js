@@ -11,6 +11,6 @@ router.get("/admin/getinfo", fetchrole.admin);
 router.get("/user/getinfo", fetchrole.user);
 router.delete("/admin/delete/:id", fetchrole.adminDelete);
 router.post("/task/new", newTask.Task);
-
+ 
 
 module.exports = router;

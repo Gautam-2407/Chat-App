@@ -45,7 +45,7 @@ body {
     text-decoration: none;
 }
 
-.sidebar>.links>ul>li {
+.sidebar>.links>.categories>.list {
     padding: .7rem 1.75rem;
     
 }
@@ -56,16 +56,16 @@ h2{
     line-height: 5;
 }
 
-ul{
+.categories{
     height: 80vh;
 }
-.sidebar .links>ul>li>#a {
+.sidebar .links>.categories>.list>#a {
     color: var(--dk-gray-400);
     text-decoration: none;
     font-size: 1.4rem;
 }
 
-ul li:last-child {
+.categories .list:last-child {
     position: absolute;
     margin-left:1rem ;
     bottom: 1rem;
@@ -75,7 +75,7 @@ ul li:last-child {
 
 
 @media (max-width: 767px) {
-    .sidebar .links>ul>li {
+    .sidebar .links>.categories>.list {
         padding-top: 12px;
         padding-bottom: 12px;
     }

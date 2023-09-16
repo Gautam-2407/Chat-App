@@ -53,9 +53,9 @@ export const adminDelete = async(id) => {
 }
 
 
-export const newtask = async(title, description) => {
+export const newtask = async(title, description,id) => {
     try {
-        const response = await commonrequest("POST", `${backend_url}/task/new`, {title: title, description: description});
+        const response = await commonrequest("POST", `${backend_url}/task/new`, {title: title, description: description, id:id});
         return response.data;
     }
     catch(error) {

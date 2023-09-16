@@ -11,6 +11,7 @@ exports.admin = async (req, res) => {
     
 }
 
+
 exports.user = async (req, res) => {
 
   try {

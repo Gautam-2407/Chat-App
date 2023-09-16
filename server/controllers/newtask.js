@@ -2,9 +2,9 @@ const NewTasks = require('../models/newTaskSchema');
 
 exports.Task = async (req, res) => {
 
-    const {title, description }= req.body;
+    const {title, description, id }= req.body;
 
-    if (!title || !description) {
+    if (!title || !description || !id) {
         return res.status(400).json({
             error: 'Please provide a title and description'
         });
@@ -13,7 +13,8 @@ exports.Task = async (req, res) => {
 
         const newTask = new NewTasks({
             title,
-            description
+            description,
+            id
         });
         const storeTask = await newTask.save();
         res.status(200).json({success: storeTask});

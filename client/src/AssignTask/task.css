@@ -77,7 +77,7 @@
 
 .title2>h1 {
     text-align: center;
-    margin: 20px;
+    /* margin: 20px; */
 }
 
 .userbox textarea {
@@ -226,3 +226,54 @@
         bottom: 100%;
     }
 }
+
+/* CSS for styling the right side of the page */
+.right {
+    background: linear-gradient(#243b55, #141e30);
+    color: #fff;
+    padding: 20px;
+    overflow: auto;
+  }
+  
+  .title2 {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .userbox {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-list {
+    margin-top: 20px;
+  }
+  
+  .user-list .ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .user-list .li {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .wrapper {
+      grid-template-columns: 1fr;
+    }
+  
+    .right {
+      padding: 10px;
+    }
+  }
+  .select-user{
+    width: 20vw;
+    height: 3rem;
+    text-align: center;
+    background: black;
+    color: white;
+    font-size: 25px;
+  }
