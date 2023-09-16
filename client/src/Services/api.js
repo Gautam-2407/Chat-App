@@ -51,3 +51,14 @@ export const adminDelete = async(id) => {
         throw error;
     }
 }
+
+
+export const newtask = async(title, description) => {
+    try {
+        const response = await commonrequest("POST", `${backend_url}/task/new`, {title: title, description: description});
+        return response.data;
+    }
+    catch(error) {
+        throw error;
+    }
+}

@@ -33,7 +33,7 @@ const UserList = () => {
   }
 
   return (
-    <div className="container">
+    <div className="check">
     <div className='app'>
       <h1 className='title'>Users</h1>
       <table className='member-table'>

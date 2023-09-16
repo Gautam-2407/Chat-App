@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
+
+:root {
+  --primary-new: #3574F2;
+  --primary-hover: #CD7D7C;
+  --secondary: #EFD0F8;
+  --secondary-hover: #B8A1D9;
+  --secondary-text: #737784;
+  --text-dark: #241F26;
+  --background: #f4f7fe;
+  --background-white: #ffff;
+
+  --box-shadow: 0px 18px 28px 0px #091e4236;
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.main-screen {
+
+  overflow: hidden;
+  width: 100vw;
+  ;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  position: relative;
+  z-index: 1;
+}
+
+.page-content {
+  height: 100vh;
+  overflow: auto;
+}
+
+@media (max-width: 992px) {
+  .main-screen {
+    padding-left: 0px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-content {
+    padding: 15px 18px;
+    height: 86vh;
+    overflow: auto;
+  }
+}

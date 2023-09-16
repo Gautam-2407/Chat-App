@@ -1,0 +1,105 @@
+.wrapper{
+    background: linear-gradient(#141e30, #243b55);
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.left{
+    text-align: center;
+    margin: 20px;
+    display: grid;
+}
+.userbox {
+    position: relative;
+}
+
+.userbox input,
+.userbox textarea {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    /* border: 2px solid #fff; */
+    border-radius: 5px;
+    outline: none;
+    background-color: rgb(7, 6, 6);
+}
+
+.userbox label {
+    position: absolute;
+    top:0;
+    left: 10px;
+    padding: 10px 0;
+    font-size: 22px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.userbox input:focus ~ label,
+.userbox textarea:focus ~ label,
+.userbox input:valid ~ label,
+.userbox textarea:valid ~ label {
+    top: -35px;
+    left: 10;
+    color: #03e9f4;
+    font-size: 18px;
+    transition: .5s;
+
+}
+
+.userbox input:focus,
+.userbox textarea:focus {
+    border: 2px solid #fff;
+   
+}
+.userbox input{
+    font-weight: 800px;
+    font-size: 22px;
+}
+
+.right{
+    display: grid;
+    grid-template-rows: 20% 80%;
+}
+
+.title2 > h1{
+    text-align: center;
+    margin: 20px;
+}
+
+.userbox textarea {
+
+    overflow:auto;
+            resize:none;
+            height:65vh;
+}
+
+/* Add this at the bottom of your CSS file */
+
+@media (max-width: 768px) {
+    .wrapper {
+      grid-template-columns: 1fr;
+    }
+    .left, .right {
+      margin: 10px;
+    }
+    .userbox input, .userbox textarea, .userbox label {
+      font-size: 18px;
+    }
+    .userbox input:focus ~ label,
+    .userbox textarea:focus ~ label,
+    .userbox input:valid ~ label,
+    .userbox textarea:valid ~ label {
+      top: -30px;
+      font-size: 16px;
+    }
+  }
+  

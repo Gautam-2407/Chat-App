@@ -64,7 +64,8 @@ const Login = () => {
                 onChange={(e) => setPhone(e.target.value)}
                 required
               />
-              <label>Phone No.</label>
+              {/* <label>Phone No.</label> */}
+              <label htmlFor="phone">Phone</label>
             </div>
             <div className="user-box">
               <input type="password" required />

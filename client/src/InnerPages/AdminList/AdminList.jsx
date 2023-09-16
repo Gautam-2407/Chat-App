@@ -29,30 +29,30 @@ const AdminList = () => {
   };
 
   return (
-    <div className='container'>
-      <div className="app">
+    <div className='test-container'>
+      <div className="test-app">
 
-            <h1 className='title'>Admin Members</h1>
-      <table className='member-table'>
+            <h1 className='test-title'>Admin Members</h1>
+      <table className='test-member-table'>
         <thead>
           <tr>
-            <th className='table-header'>Name</th>
-            <th className='table-header'>Email</th>
-            <th className='table-header'>Role</th>
-            <th className='table-header'>Phone</th>
-            <th className='table-header'>Action</th>
+            <th className='test-table-header'>Name</th>
+            <th className='test-table-header'>Email</th>
+            <th className='test-table-header'>Role</th>
+            <th className='test-table-header'>Phone</th>
+            <th className='test-table-header'>Action</th>
           </tr>
         </thead>
         <tbody>
           {data.map((member) => (
-            <tr key={member._id} className='table-row'>
-              <td className='table-data'>{member.name}</td>
-              <td className='table-data'>{member.email}</td>
-              <td className='table-data'>{member.role}</td>
-              <td className='table-data'>{member.phone}</td>
-              <td className='table-data'>
-              <button  className='edit-button'>Edit</button>
-                <button onClick={() => handleDelete(member._id)} className='delete-button'>Delete</button>
+            <tr key={member._id} className='test-table-row'>
+              <td className='test-table-data'>{member.name}</td>
+              <td className='test-table-data'>{member.email}</td>
+              <td className='test-table-data'>{member.role}</td>
+              <td className='test-table-data'>{member.phone}</td>
+              <td className='test-table-data'>
+              <button  className='test-edit-button'>Edit</button>
+                <button onClick={() => handleDelete(member._id)} className='test-delete-button'>Delete</button>
               </td>
             </tr>
           ))}

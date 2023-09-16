@@ -32,11 +32,11 @@ function Sidebar() {
                         <Link to='/new-task' id="a">Pending Task</Link>
                     </li>
                     <li className="">
-                        <Link to='/new-task' id="a">Admin List </Link>
+                        <Link to='/admin' id="a">Admin List </Link>
                     </li>
                     
                     <li className="">
-                        <Link to='/new-task' id="a">User's List </Link>
+                        <Link to='/user' id="a">User's List </Link>
                     </li>
                     <li className="">
                         <p id="a" onClick={handlelogout}>Logout </p>
