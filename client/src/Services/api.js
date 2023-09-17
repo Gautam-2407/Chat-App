@@ -62,3 +62,13 @@ export const newtask = async(title, description,id) => {
         throw error;
     }
 }
+
+export const getTask = async() => {
+    try {
+        const response = await commonrequest("GET", `${backend_url}/task/all`);
+        return response.data;
+    }
+    catch(error) {
+        throw error;
+    }
+}

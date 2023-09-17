@@ -11,6 +11,7 @@ const AdminList = () => {
         const response = await adminfetch();
         const adminMembers = response;
         setData(adminMembers);
+        console.log(adminMembers);
       } catch (error) {
         console.error('API Error:', error);
       }

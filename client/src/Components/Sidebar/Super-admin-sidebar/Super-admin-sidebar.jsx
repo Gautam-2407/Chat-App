@@ -29,7 +29,7 @@ function Sidebar() {
                     </li>
 
                     <li className="list">
-                        <Link to='/new-task' id="a">Pending Task</Link>
+                        <Link to='/pending-sa' id="a">Pending Task</Link>
                     </li>
                     <li className="list">
                         <Link to='/admin' id="a">Admin List </Link>

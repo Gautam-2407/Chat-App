@@ -1,5 +1,5 @@
 const users = require("../models/userSchema");
-
+const task = require("../models/newTaskSchema");
 exports.admin = async (req, res) => {
 
     try {
@@ -42,3 +42,30 @@ exports.adminDelete = async (req, res) => {
   }
   
 }
+
+exports.getTask = async (req, res) => {
+
+  // try {
+  //     const fetchtask = await task.find({  });
+  //     res.json(fetchtask);
+  //   } catch (error) {
+  //     res.status(500).json({ error: 'Server error' });
+  //   }
+
+  try {
+    // Fetch tasks and populate the userId field with user details
+    const tasks = await task.find().populate('id', 'name'); // You can specify which user fields to include ('name' in this case)
+
+    res.json(tasks);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Server error' });
+  }
+  
+
+}
+
+
+// exports.getTasksWithUserNames = async (req, res) => {
+
+// };

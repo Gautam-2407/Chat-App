@@ -14,9 +14,9 @@ const newTaskSchema = new mongoose.Schema({
         default: Date.now
     },
     id:{
-        type: String,
-        required: true
-    }
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users', // Reference to the User model
+        }
 
 });
 

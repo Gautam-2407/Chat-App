@@ -1,24 +1,25 @@
-.test-container, .check {
+.test-container,.test2-container, .check {
     background: linear-gradient(#141e30, #243b55);
     color: #fff;
     font-family: Arial, sans-serif;
     height: 100%;
     width: 100%;
     padding: 10px 20px;
+    overflow: auto;
 }
 
-.app , .test-app {
+.app , .test-app ,.test2-app {
     text-align: center;
 
   }
   
-  .test-title, .title {
+  .test-title,.test2-title, .title {
     font-size: 24px;
     padding: 20px 20px;
     color: #fff; /* Set the title color for better visibility on a dark background */
   }
   
-  .test-member-table, .member-table {
+  .test-member-table,.test2-member-table, .member-table {
     width: 100%;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -27,28 +28,28 @@
     background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
   }
   
-  .test-table-header, .table-header {
+  .test2-table-header,.test-table-header, .table-header {
     background-color: #333;
     color: #fff;
     padding: 10px;
     text-align: left;
   }
   
-  .test-table-row:nth-child(even) , .table-row:nth-child(even) {
+  .test2-table-row:nth-child(even) ,.test-table-row:nth-child(even) , .table-row:nth-child(even) {
     background-color: rgba(255, 255, 255, 0.05); /* Slightly transparent white background for even rows */
   }
   
-  .table-row:hover , .test-table-row:hover {
+  .table-row:hover , .test2-table-row:hover {
     background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background for hover effect */
   }
   
-  .test-table-data , .table-data{
+  .test-table-data ,.test2-table-data , .table-data{
     padding: 10px;
     text-align: left;
     color: #fff; /* Set the text color to white for better visibility on a dark background */
   }
   
-  .edit-button, .test-edit-button {
+  .edit-button, .test-edit-button,.test2-edit-button {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -57,7 +58,7 @@
     margin-right: 5px;
   }
   
-  .delete-button , .test-delete-button {
+  .delete-button , .test-delete-button,.test2-delete-button {
     background-color: #dc3545;
     color: #fff;
     border: none;
@@ -66,7 +67,7 @@
     margin-right: 5px;
   }
   
-  .delete-button:hover , .test-delete-button:hover {
+  .delete-button:hover , .test-delete-button:hover,.test2-delete-button:hover {
     background-color: #c82333;
   }
   

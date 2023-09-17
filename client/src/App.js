@@ -10,6 +10,7 @@ import AdminList from './InnerPages/AdminList/AdminList';
 import UserList from './InnerPages/UserList/UserList';
 import NewTask from './AssignTask/NewTask';
 import Header from './Components/Header/Header';
+import PendingSA from './InnerPages/SAPending/PendingSA';
 
 function App() {
   const handleLogout = () => {
@@ -40,6 +41,9 @@ function App() {
         </Route>
         <Route path="/user" element={<Privateroute onLogout={handleLogout} />}>
           <Route index element={<UserList />} />
+        </Route>
+        <Route path="/pending-sa" element={<Privateroute onLogout={handleLogout} />}>
+          <Route index element={<PendingSA />} />
         </Route>
         <Route path="/register" element={<Register />} />
         <Route path='/header' element={<Header username="John Doe"/>} />
