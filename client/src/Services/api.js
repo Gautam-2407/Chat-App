@@ -52,6 +52,25 @@ export const adminDelete = async(id) => {
     }
 }
 
+export const taskDelete = async(id) => {
+    try {
+        const response = await commonrequest("Delete", `${backend_url}/task/delete/${id}`);
+        return response.data;
+    }
+    catch(error) {
+        throw error;
+    }
+}
+export const taskcomplete = async(id) => {
+    try {
+        const response = await commonrequest("PUT", `${backend_url}/task/update/${id}`);
+        return response.data;
+    }
+    catch(error) {
+        throw error;
+    }
+}
+
 
 export const newtask = async(title, description,id) => {
     try {

@@ -57,6 +57,15 @@
     cursor: pointer;
     margin-right: 5px;
   }
+
+  .test2-complete-button{
+    background-color: #00ff37;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
   
   .delete-button , .test-delete-button,.test2-delete-button {
     background-color: #dc3545;

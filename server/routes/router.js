@@ -12,7 +12,8 @@ router.get("/user/getinfo", fetch.user);
 router.delete("/admin/delete/:id", fetch.adminDelete);
 router.post("/task/new", newTask.Task);
 router.get("/task/all", fetch.getTask);
-// router.get("/task/username" , fetch.getTasksWithUserNames);
+router.delete("/task/delete/:id" , newTask.taskDelete);
+router.put("/task/update/:id" , newTask.taskUpdate);
  
 
 module.exports = router;

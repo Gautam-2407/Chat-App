@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { getTask } from '../../Services/api';
+import { getTask, taskDelete, taskcomplete } from '../../Services/api';
 
 const PendingSA = () => {
   const [data, setData] = useState([]);
+  const [status, setStatus] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,6 +17,24 @@ const PendingSA = () => {
 
     fetchData();
   }, []);
+
+  const handleDelete = async (taskId) => {
+    try {
+      await taskDelete(taskId);
+      setData((prevData) => prevData.filter((task) => task._id !== taskId));
+    } catch (error) {
+      console.error('Delete Error:', error);
+    }
+  };
+
+  const handlecomplete = async (taskId) => {
+    try {
+      await taskDelete(taskId);
+      setStatus((prevData) => prevData.filter((task) => task._id !== taskId));
+    } catch (error) {
+      console.error('Delete Error:', error);
+    }
+  };
 
   return (
     <div className='test2-container'>
@@ -50,7 +69,8 @@ const PendingSA = () => {
                   <td className='test2-table-data'>{task.date}</td>
                   <td className='test2-table-data'>
                     <button className='test2-edit-button'>Edit</button>
-                    <button className='test2-delete-button'>Delete</button>
+                    <button className='test2-complete-button'>Complete</button>
+                    <button className='test2-delete-button' onClick={() => handleDelete(task._id)}>Delete</button>
                   </td>
                 </tr>
               ))
