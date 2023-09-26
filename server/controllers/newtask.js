@@ -26,6 +26,18 @@ exports.Task = async (req, res) => {
 
 }
 
+exports.pendingTask = async (req, res) => {
+
+  try {
+      const status_pending = await NewTasks.find({ status: 'pending' });
+      res.json(status_pending);
+    } catch (error) {
+      res.status(500).json({ error: 'Server error' });
+    }
+  
+
+}
+
 exports.taskDelete = async (req, res) => {
     const id = req.params.id;
     try {

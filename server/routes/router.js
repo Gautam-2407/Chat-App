@@ -12,6 +12,7 @@ router.get("/user/getinfo", fetch.user);
 router.delete("/admin/delete/:id", fetch.adminDelete);
 router.post("/task/new", newTask.Task);
 router.get("/task/all", fetch.getTask);
+router.get("/task/completed", fetch.getcompleteTask);
 router.delete("/task/delete/:id" , newTask.taskDelete);
 router.put("/task/update/:id" , newTask.taskUpdate);
  

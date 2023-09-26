@@ -32,6 +32,9 @@ function Sidebar() {
                         <Link to='/pending-sa' id="a">Pending Task</Link>
                     </li>
                     <li className="list">
+                        <Link to='/complete-sa' id="a">Completed Task</Link>
+                    </li>
+                    <li className="list">
                         <Link to='/admin' id="a">Admin List </Link>
                     </li>
                     

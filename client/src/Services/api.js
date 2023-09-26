@@ -63,7 +63,7 @@ export const taskDelete = async(id) => {
 }
 export const taskcomplete = async(id) => {
     try {
-        const response = await commonrequest("PUT", `${backend_url}/task/update/${id}`);
+        const response = await commonrequest("PUT", `${backend_url}/task/update/${id}`, { status: 'Complete' });
         return response.data;
     }
     catch(error) {
@@ -85,6 +85,15 @@ export const newtask = async(title, description,id) => {
 export const getTask = async() => {
     try {
         const response = await commonrequest("GET", `${backend_url}/task/all`);
+        return response.data;
+    }
+    catch(error) {
+        throw error;
+    }
+}
+export const getcompletedTask = async() => {
+    try {
+        const response = await commonrequest("GET", `${backend_url}/task/completed`);
         return response.data;
     }
     catch(error) {
